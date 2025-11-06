@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>WISTERIA — Jewellery & Cosmetics</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">WISTERIA</a>
+      <nav class="main-nav" aria-label="Main Navigation">
+        <button id="searchToggle" class="icon-btn" aria-label="Search">🔍</button>
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
+        <button id="cartButton" class="cart-btn" aria-label="Open cart">
+          🛒 <span id="cartCount" class="cart-count">0</span>
+        </button>
+        <button class="hamburger" id="menuToggle" aria-label="Open menu">☰</button>
+      </nav>
+    </div>
+
+    <div id="topBar" class="top-bar container">
+      <div class="hero">
+        <h1>Fine Jewellery & Natural Cosmetics</h1>
+        <p>Handpicked pieces. Cruelty-free beauty. Free shipping over ₹2,000.</p>
+        <a href="#catalog" class="btn primary">Shop Now</a>
+      </div>
+      <div class="hero-image" aria-hidden="true">
+        <!-- decorative SVG -->
+        <img src="assets/hero.svg" alt="" />
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="search-wrap" id="searchWrap" hidden>
+        <input id="searchInput" placeholder="Search products, e.g. 'lipstick' or 'necklace'">
+      </div>
+
+      <div class="filters">
+        <select id="categoryFilter" aria-label="Filter by category">
+          <option value="all">All categories</option>
+          <option value="jewellery">Jewellery</option>
+          <option value="cosmetics">Cosmetics</option>
+        </select>
+
+        <select id="sortSelect" aria-label="Sort products">
+          <option value="featured">Featured</option>
+          <option value="price-asc">Price — Low to High</option>
+          <option value="price-desc">Price — High to Low</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="catalog" class="product-grid" aria-live="polite">
+      <!-- product cards inserted by JS -->
+    </section>
+
+    <section class="about">
+      <h2>About WISTERIA</h2>
+      <p>WISTERIA curates elegant jewellery and clean cosmetics — ethically sourced, beautifully packaged. Designed for the modern you.</p>
+    </section>
+  </main>
+
+  <!-- Cart drawer -->
+  <aside id="cartDrawer" class="cart-drawer" aria-hidden="true">
+    <header class="drawer-header">
+      <h3>Your Cart</h3>
+      <button id="closeCart" class="icon-btn" aria-label="Close cart">✕</button>
+    </header>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <span>Subtotal</span>
+        <strong id="cartTotal">₹0</strong>
+      </div>
+      <button id="checkoutBtn" class="btn primary full">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Product modal -->
+  <div id="productModal" class="modal" hidden>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-label="Product details">
+      <button id="closeModal" class="icon-btn modal-close" aria-label="Close product details">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <span id="year"></span> WISTERIA</div>
+      <div class="socials">Follow us: <a href="#" aria-label="Instagram">Instagram</a> · <a href="#" aria-label="Facebook">Facebook</a></div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
