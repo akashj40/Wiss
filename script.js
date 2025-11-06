@@ -174,12 +174,12 @@ function openModal(product){
       </div>
     </div>
   `;
-  productModal.hidden = false;
+  productModal.style.display = 'flex';
   productModal.scrollTop = 0;
   productModal.focus();
   el('#modalAdd').addEventListener('click', ()=>{
     addToCart(product.id,1);
-    productModal.hidden = true;
+    productModal.style.display = 'none';
   });
   el('#modalClose').addEventListener('click', ()=> productModal.hidden = true);
 }
